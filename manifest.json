@@ -1,0 +1,21 @@
+{
+  "name": "Peón especialista 2025",
+  "short_name": "P.E. 2025",
+  "description": "Una PWA para el test de Peón especialista 2025.",
+  "start_url": "Peon_especialista_2025_ios.htm",
+  "display": "standalone",
+  "background_color": "#9dc09d",
+  "theme_color": "#3f8880",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
