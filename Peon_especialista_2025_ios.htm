@@ -16,7 +16,17 @@ Pe&#x00F3;n especialista 2025 &#x2013; CALIDAD URBANA v0.1
 
 <!-- The following insertion allows you to add your own code directly to this head tag from the configuration screen -->
 
-<meta name="apple-mobile-web-app-capable" content="yes">    
+<!-- disable iPhone inital scale -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- html5.js for IE less than 9 -->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- css3-mediaqueries.js for IE less than 9 -->
+<!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">    
 <meta name="apple-mobile-web-app-title" content="Pe&#243;n especialista 2025">    
 <link rel="apple-touch-icon" href="icon.png"> <link rel="shortcut icon" href="icon.png">    
@@ -34,108 +44,130 @@ Pe&#x00F3;n especialista 2025 &#x2013; CALIDAD URBANA v0.1
 
 <style>
 
+/*  hp6.cs_                   */ 
+/*  Facelift Responsive      */
+/*  7 February 2014         */  
+/*  This version 1.3 - 24 March 2016 - Add responsive iframe */
 
-/* This is the CSS stylesheet used in the exercise. */
+/* This is a modified CSS3 stylesheet for rounded corners of buttons,
+the layout boxes and the input boxes in the exercise,
+as well as dropshadows on buttons and draggable cards in JMix drag and drop */
+
+/* Removed all browser specific -moz -khtml -webkit  24 March 2016 */
+
+/* Stan Bogdanov  */
+/* stanbogdanov@yahoo.com     */
+/* http://ewbooks.info/hotpot */
+   
+
 /* Elements in square brackets are replaced by data based on configuration settings when the exercise is built. */
+
+/* Resetting */
+/* set image and video max width to 100% */
+img,
+video,
+object,
+embed {
+	max-width: 100%;
+	height: auto;
+	/*width: auto\9; The CSS validator doesn't like this*/ /* for ie8 but should we care about IE8, when IE11 has been around for quite a lot ?*/
+} 
+
+	.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+	margin-left:auto;margin-right:auto;text-align:center; /* Stan: Comment out this line if you don't want the video to be centered */
+}
+
+	.video-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
 /* BeginCorePageCSS */
 
 /* Made with executable version 7.0 Release 3 Build 0 */
 
 
-
-/* CSS variables for colours. */
-:root{
-	--strFontFace:       Geneva,Arial,sans-serif;
-	--strFontSize:       medium;
-	--strTextColor:      #003400;
-	--strTitleColor:     #ffffff;
-
-	--strFuncLightColor: #fefae6;
-	--strFuncShadeColor: #7f7b66;
-	--strLinkColor:      #20c67a;
-	--strVLinkColor:     #a0fb0e;
-	
-	--strNavBarColor:    #3f8880;
-	--strNavLightColor:  #9fc3bf;
-	--strNavShadeColor:  #1f4440;
-	--strNavTextColor:   #ffffff;
-	
-	--strPageBGColor:    #9dc09d;
-	--strExBGColor:      #fef6cd;
+/* Hack to hide a nested Quicktime player from IE, which can't handle it. */
+* html object.MediaPlayerNotForIE {
+	display: none;
 }
 
 body{
-	font-family: var(--strFontFace);
-	background-color: var(--strPageBGColor);
-	color: var(--strTextColor);
+	font-family: Geneva,Arial,sans-serif;
+	background-color: #9dc09d;
+	color: #003400;
  
-	margin-right: 5%;
-	margin-left: 5%;
-	font-size: var(--strFontSize);
-	padding-bottom: 0.5em;
+	margin-right: 1%;
+	margin-left: 1%;
+	font-size: medium;
 }
 
 p{
 	text-align: left;
 	margin: 0px;
-	font-size: 1em;
+	font-size: 100%;
 }
 
 table,div,span,td{
-	font-size: 1em;
-	color: var(--strTextColor);
+	font-size: 100%;
+	color: #003400;
 }
 
 div.Titles{
-	padding: 0.5em;;
+	padding: 0.5em;
 	text-align: center;
-	color: var(--strTitleColor);
+	color: #ffffff;
 }
 
 button{
-	font-family: var(--strFontFace);
-	font-size: 1em;
+	font-family: Geneva,Arial,sans-serif;
+	font-size: 100%;
 	display: inline;
+/* Stan_Rounded buttons */
+	border-radius: 5px;
+	padding: 4px 17px;
+	margin:2px;
+/* Stan_Rounded buttons  END*/
 }
 
+button:link,
+button:visited,
+button:hover,
+button:focus,
+button:active {
+	outline: none;
+}
+
+
 .ExerciseTitle{
-	font-size: 140%;
-	color: var(--strTitleColor);
+	font-size: 100%;
+	color: #ffffff;
 }
 
 .ExerciseSubtitle{
-	font-size: 120%;
-	color: var(--strTitleColor);
+	font-size: 100%;
+	color: #ffffff;
 }
 
-div.StdDiv, div.ExerciseContainer, div.ReadingContainer{
-	background-color: var(--strExBGColor);
+div.StdDiv{
+	background-color: #fef6cd;
 	text-align: center;
-	font-size: 1em;
-	color: var(--strTextColor);
+	font-size: 100%;
+	color: #003400;
 	padding: 0.5em;
-	border-style: solid;
-	border-width: 1px 1px 1px 1px;
-	border-color: var(--strTextColor);
+	border: 1px solid #ccc;
 	margin-bottom: 1px;
-}
-
-div.ReadingContainer, div.ExerciseContainer{
-	min-width: 15em;
-	flex-grow: 1;
-	flex-basis: 0;
-	margin: 1px;
-}
-
-div#ContainerDiv{
-	margin: -1px;
-	padding: 0;
-	border: none;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
+/*Stan Rounded corners of layout boxes */	
+	border-radius: 5px;
+/*Stan Rounded corners of layout boxes */	
 }
 
 /* EndCorePageCSS */
@@ -144,14 +176,14 @@ div#ContainerDiv{
 	text-align: right;
 	font-size: 150%;
 	direction: rtl;
-	font-family: "Simplified Arabic", "Traditional Arabic", "Times New Roman", var(--strFontFace); 
+	font-family: "Simplified Arabic", "Traditional Arabic", "Times New Roman", Geneva,Arial,sans-serif; 
 }
 
 .CentredRTLText{
 	text-align: center;
 	font-size: 150%;
 	direction: rtl;
-	font-family: "Simplified Arabic", "Traditional Arabic", "Times New Roman", var(--strFontFace); 
+	font-family: "Simplified Arabic", "Traditional Arabic", "Times New Roman", Geneva,Arial,sans-serif; 
 }
 
 button p.RTLText{
@@ -162,7 +194,7 @@ button p.RTLText{
 	text-align: right;
 	font-size: 150%;
 	direction: rtl;
-	font-family: "Times New Roman", var(--strFontFace);
+	font-family: "Times New Roman", Geneva,Arial,sans-serif;
 }
 
 .Guess{
@@ -178,7 +210,8 @@ div#Timer{
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-	color: var(--strTitleColor);
+	color: #ffffff;
+
 }
 
 span#TimerText{
@@ -187,7 +220,10 @@ span#TimerText{
 	border-style: solid;
 	font-weight: bold;
 	display: none;
-	color: var(--strTitleColor);
+	color: #ffffff;
+/* Stan  rounded corners of timer */	
+  border-radius: 10px;
+  /* Stan  rounded corners of timer end */
 }
 
 span.Instructions{
@@ -199,74 +235,104 @@ div.ExerciseText{
 }
 
 .FeedbackText, .FeedbackText span.CorrectAnswer, .FeedbackText span.Guess, .FeedbackText span.Answer{
-	color: var(--strTitleColor);
+	color: #ffffff;
 }
 
 .LeftItem{
-	font-size: 1em;
-	color: var(--strTextColor);
+	font-size: 100%;
+	color: #003400;
 	text-align: left;
 }
 
 .RightItem{
 	font-weight: bold;
-	font-size: 1em;
-	color: var(--strTextColor);
-	text-align: left;
+	font-size: 100%;
+	color: #003400;
 }
 
 span.CorrectMark{
 
 }
 
+
 input, textarea{
-	font-family: var(--strFontFace);
-	font-size: 120%;
+	font-family: Verdana,Geneva,Arial,sans-serif;
+	font-size: 100%;
+
+/* Stan_rounded border of input boxes and textarea */
+	border-radius: 5px;
+	padding: 5px;
+	border:1px solid silver;
+/* Stan_rounded border of input boxes and textarea END */
 }
 
+/* Stan_rounded focus border of input boxes and textarea */
+
+input:focus, textarea:focus {
+	outline: none; 
+	border-radius: 5px;
+	padding: 5px;
+	border:1px solid silver;
+/* Stan rounded focus border of input boxes and textarea end 8 December 2012 */	
+
+
+/* Stan inset dropshade of input boxes and textarea */
+	box-shadow: -1px -1px 5px #888;
+/* Stan inset dropshade of input boxes and textarea end 8 December 2012 */
+	}
+	
 select{
-	font-size: 1em;
+	font-size: 100%;
+	/* Stan - Rounded menu */
+	border-radius: 5px;
+	padding: 3px 2px 3px 5px;
+	border: 1px solid silver;
+/* Stan - Rounded menu END */
+}
+
+select:focus {
+outline:none;
 }
 
 div.Feedback {
-	background-color: var(--strPageBGColor);
+	background-color: #9dc09d;
 	left: 33%;
 	width: 34%;
 	top: 33%;
 	z-index: 1;
 	border-style: solid;
 	border-width: 1px;
+	border-color: #3f8880;
 	padding: 5px;
 	text-align: center;
-	color: var(--strTitleColor);
+	color: #ffffff;
 	position: absolute;
 	display: none;
-	font-size: 1em;
+	font-size: 100%;
+/* Stan_rounded border of feedback box */
+	border-radius: 5px;
+	padding: 5px;
+/* Stan_rounded border of fixed box END */
+	
 }
 
 
 
 
 div.ExerciseDiv{
-	color: var(--strTextColor);
-}
-
-/* JMatch standard output table. */
-table.MatchTable{
-	margin: 2em auto; 
-	border-width: 0;
+	color: #003400;
 }
 
 /* JMatch flashcard styles */
 table.FlashcardTable{
 	background-color: transparent;
-	color: var(--strTextColor);
-	border-color: var(--strTextColor);
-	margin-left: auto;
-	margin-right: auto;
+	color: #003400;
+	border-color: #003400;
+	margin-left: 5%;
+	margin-right: 5%;
 	margin-top: 2em;
 	margin-bottom: 2em;
-	/*width: 90%;*/
+	width: 90%;
 	position: relative;
 	text-align: center;
 	padding: 0px;
@@ -276,7 +342,7 @@ table.FlashcardTable tr{
 	border-style: none;
 	margin: 0px;
 	padding: 0px;
-	background-color: var(--strExBGColor);
+	background-color: #fef6cd;
 }
 
 table.FlashcardTable td.Showing{
@@ -288,10 +354,9 @@ table.FlashcardTable td.Showing{
 	margin: 0px;
 	border-style: solid;
 	border-width: 1px;
-	border-radius: 0.5em;
-	color: var(--strTextColor);
-	box-shadow: 0.2em 0.3em 0.2em var(--strNavShadeColor);
-	background-color: var(--strPageBGColor);
+	border-color: silver;
+	color: #003400;
+	background-color: #fef6cd;
 }
 
 table.FlashcardTable td.Hidden{
@@ -299,17 +364,6 @@ table.FlashcardTable td.Hidden{
 }
 
 /* JMix styles */
-div.JMixDrag, div.JMatchDrag{
-	padding: 0;
-	background-color: var(--strPageBGColor);
-	border-style: none;
-}
-
-div#GuessDiv{
-	padding: 0.5em;
-	margin-bottom: 2em;
-}
-
 div#SegmentDiv{
 	margin-top: 2em;
 	margin-bottom: 2em;
@@ -320,11 +374,7 @@ a.ExSegment{
 	font-size: 120%;
 	font-weight: bold;
 	text-decoration: none;
-	color: var(--strTextColor);
-	display: inline-block;
-	padding: 0.5em;
-	border: solid 1pt gray;
-	margin-bottom: 0.5em;
+	color: #003400;
 }
 
 span.RemainingWordList{
@@ -333,12 +383,11 @@ span.RemainingWordList{
 
 div.DropLine {
 	position: absolute;
-	text-align: left;
+	text-align: center;
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
-	border-bottom-color: var(--strTitleColor);
+	border-bottom-color: #ffffff;
 	width: 80%;
-	left: 10%;
 }
 
 /* JCloze styles */
@@ -462,16 +511,11 @@ div.Keypad{
 }
 
 div.Keypad button{
-	font-family: var(--strFontFace);
-	font-size: 120%;
+	font-family: Geneva,Arial,sans-serif;
+	font-size: 100%;
 	background-color: #ffffff;
 	color: #000000;
 	width: 2em;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 0.5em;
-	color: var(--strTextColor);
-	box-shadow: 0.2em 0.3em 0.2em var(--strTextColor);
 }
 
 /* JQuiz styles */
@@ -487,30 +531,32 @@ div.QuestionNavigation{
 }
 
 textarea{
-	font-family: var(--strFontFace);
+	font-family: Geneva,Arial,sans-serif;
+	border: 1px solid #ccc;
 }
 
 .QuestionText{
 	text-align: left;
 	margin: 0px;
-	font-size: 1em;
+	font-size: 100%;
 }
 
 .Answer{
-	font-size: 120%;
+	font-size: 100%;
+	letter-spacing: 0.1em;
 }
 
 .PartialAnswer{
-	font-size: 120%;
+	font-size: 100%;
 	letter-spacing: 0.1em;
-	color: var(--strTitleColor);
+	color: #ffffff;
 }
 
 .Highlight{
 	color: #000000;
-	background-color: #ffff00;
+	background-color: gold;
 	font-weight: bold;
-	font-size: 120%;
+	font-size: 100%;
 }
 
 ol.QuizQuestions{
@@ -520,8 +566,7 @@ ol.QuizQuestions{
 
 li.QuizQuestion{
 	padding: 1em;
-	border-style: solid;
-	border-width: 0px 0px 1px 0px;
+	border-color: #ccc;
 }
 
 ol.MCAnswers{
@@ -545,112 +590,574 @@ div.ShortAnswer{
 }
 
 .FuncButton {
-	border-style: solid;
-	border-radius: 0.5em;
-	padding: 0.5em;
-	min-width: 3em;
+	text-align: center;
+	border: 1px solid silver;
+	margin-right:2px;
 
-	border-left-color: var(--strFuncLightColor);
-	border-top-color: var(--strFuncLightColor);
-	border-right-color: var(--strFuncShadeColor);
-	border-bottom-color: var(--strFuncShadeColor);
-	color: var(--strTextColor);
-	background-color: var(--strExBGColor);
+	border-left-color: #fefae6;
+	border-top-color: #fefae6;
+	border-right-color: #7f7b66;
+	border-bottom-color: #7f7b66;
+	color: #003400;
+	background-color: #fef6cd;
 
-	border-width: 1pt;
-	cursor: pointer;	
-	box-shadow: 0.2em 0.3em 0.2em var(--strFuncShadeColor);
+
+	padding: 3px 6px 3px 6px;
+	cursor: pointer;
+/* Stan Button Shadow Dec 4 2012*/	
+	box-shadow: 2px 2px 5px #888;
+/* Stan Button Shadow end */
 }
 
-.FuncButton:active {
-	box-shadow: none;
+.FuncButtonUp {
+	text-align: center;
+	border: 1px solid silver;
+	margin-right:2px;
+
+	border-left-color: #fefae6;
+	border-top-color: #fefae6;
+	border-right-color: #7f7b66;
+	border-bottom-color: #7f7b66;
+
+	background-color: #3f8880;
+	color: #fef6cd;
+
+	padding: 3px 6px 3px 6px;
+	cursor: pointer;
+
+/* Stan Button Shadow */	
+	box-shadow: -2px -2px 5px #888;
+/* Stan Button Shadow end  Dec 4 2012*/
 }
 
-.FuncButton:hover{
-	color: var(--strExBGColor);
-	background-color: var(--strTextColor);
+.FuncButtonDown {
+	text-align: center;
+	border:1px solid silver;
+	margin-right:2px;
+
+	border-left-color: #7f7b66;
+	border-top-color: #7f7b66;
+	border-right-color: #fefae6;
+	border-bottom-color: #fefae6;
+	background-color: #3f8880;
+	color: #fef6cd;
+
+
+	padding: 3px 6px 3px 6px;
+	cursor: pointer;
+
+/* Stan Button Shadow Dec 4 2012 */	
+	box-shadow: -2px -2px 5px #888;
+/* Stan Button Shadow end */
 }
 
 /*BeginNavBarStyle*/
 
 div.NavButtonBar{
-	background-color: var(--strNavBarColor);
+	background-color: #3f8880;
+	border: 1px solid #1f4440;
 	text-align: center;
-	margin: 0.25rem 0;
+	margin: 2px 0px 2px 0px;
 	clear: both;
-	font-size: 1em;
-	padding: 0.2em;
-	box-sizing: border-box;
+	font-size: 100%;
+
+/* Stan Rounded corner of Nav Bar 	*/
+	border-radius: 5px;
+/* Stan Rounded corner of Nav Bar  end */
+/* Stan NavBar Shadow Dec 6 2012 	*/
+	box-shadow: -2px -2px 5px #888;
+/* Stan navBar Shadow end  Dec 6 2012 */
+padding:1px;
 }
 
 .NavButton {
-	border-style: solid;
-	border-radius: 0.5em;
-	padding: 0.5em;
-	min-width: 3em;
+	border: 1px solid silver;
 	
-	border-left-color: var(--strNavLightColor);
-	border-top-color: var(--strNavLightColor);
-	border-right-color: var(--strNavShadeColor);
-	border-bottom-color: var(--strNavShadeColor); 
-	background-color: var(--strNavBarColor);
-	color: var(--strNavTextColor);
+	border-left-color: #9fc3bf;
+	border-top-color: #9fc3bf;
+	border-right-color: #1f4440;
+	border-bottom-color: #1f4440;
+	background-color: #3f8880;
+	color: #ffffff;
 
-	border-width: 1pt;
+
 	cursor: pointer;	
-	box-shadow: 0.2em 0.3em 0.2em var(--strNavShadeColor);
+/* Stan Shadow on buttons Dec 4 2012 	*/
+	box-shadow: 2px 2px 5px #1f4440;
+/* Stan Shadow on buttons end */
 }
 
-.NavButton:active {
-	box-shadow: none;
+.NavButtonUp {
+	border:1px solid silver;
+
+	border-left-color: #9fc3bf;
+	border-top-color: #9fc3bf;
+	border-right-color: #1f4440;
+	border-bottom-color: #1f4440;
+	color: #3f8880;
+	background-color: #fef6cd;
+
+	cursor: pointer;	
+/* Stan Shadow on buttons Dec 4 2012 */
+	box-shadow: -2px -2px 5px #1f4440;
+/* Stan Shadow on buttons end */
 }
 
-.NavButton:hover{
-	color: var(--strNavBarColor);
-	background-color: var(--strNavTextColor);
+.NavButtonDown {
+	border: 1px solid silver;
+
+	border-left-color: #1f4440;
+	border-top-color: #1f4440;
+	border-right-color: #9fc3bf;
+	border-bottom-color: #9fc3bf;
+	color: #3f8880;
+	background-color: #fef6cd;
+
+	cursor: pointer;
+/* Stan Shadow on buttons Dec 4 2012 */
+	box-shadow: -2px -2px 5px #1f4440;
+/* Stan Shadow on buttons end */	
 }
 
 /*EndNavBarStyle*/
 
 a{
-	color: var(--strLinkColor);
+	color: #20c67a;
 }
 
 a:visited{
-	color: var(--strVLinkColor);
+	color: #a0fb0e;
 }
 
 a:hover{
-	color: var(--strLinkColor);
+	color: #20c67a;
 }
 
 div.CardStyle {
 	position: absolute;
-	font-family: var(--strFontFace);
-	font-size: 1em;
-	border-style: solid;
-	border-radius: 0.5em;
-	padding: 0.5em;
-	min-width: 2em;
-	border-width: 1pt;
-	color: var(--strTextColor);
-	box-shadow: 0.2em 0.3em 0.2em var(--strTextColor);
-	background-color: var(--strExBGColor);
+	font-family: Geneva,Arial,sans-serif;
+	font-size: 100%;
+	padding: 5px;
+	border: 1px solid silver;
+	color: #003400;
+	background-color: #fef6cd;
 	left: -50px;
 	top: -50px;
 	overflow: visible;
-	touch-action: none;
-	user-select: none;
-	box-sizing: border-box;
-}
+	
+/* Stan_rounded border of cards */
+	border-radius: 5px;
+/* Stan_rounded border of cards END */
 
-div.CardStyleCentered{
-	text-align: center;
+/* Stan card Shadow Dec 4 2012 */
+	box-shadow: -2px -2px 2px #888;
+/* Stan card Shadow end */
 }
 
 .rtl{
 	text-align: right;
 	font-size: 140%;
+}
+
+
+/* Responsive */
+
+
+/****************
+smaller than 980
+*****************/
+@media screen and (max-width: 980px) {
+
+/* embedded videos */
+	.video embed,
+	.video object {
+		width: 100%;
+		height: auto;
+		min-height: 300px;
+	}
+	
+	.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+	margin-left:auto;margin-right:auto;text-align:center; /* Stan: Comment out this line if you don't want the video to be centered */
+}
+
+	.video-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+div.Feedback {
+	background-color: #9dc09d;
+	left: 2%;
+	top: 1%;
+	width: 95%;
+	z-index: 1;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #3f8880;
+	padding: 5px;
+	text-align: center;
+	color: #000000;
+	position: absolute;
+	display: none;
+	font-size: 100%;
+/* Stan_rounded border of feedback box */
+	border-radius: 5px;
+	padding: 5px;
+/* Stan_rounded border of fixed box END */
+	
+	}
+}
+
+/************************************************************************************
+smaller than 650
+*************************************************************************************/
+@media screen and (max-width: 650px) {
+
+	/* embedded videos */
+	.video embed,
+	.video object {
+		min-height: 250px;
+	}
+
+	.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+	margin-left:auto;margin-right:auto;text-align:center; /* Stan: Comment out this line if you don't want the video to be centered */
+}
+
+	.video-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+	div.LeftContainer{
+		border-style: none;
+		padding: 2px 0px 2px 0px;
+		width: 100%;
+		margin-bottom: 0px;
+	}
+
+	div.RightContainer{
+		border-style: none;
+		padding: 2px 0px 2px 0px;
+		width: 100%;
+		margin-bottom: 0px;
+	}
+
+div.Feedback {
+	background-color: #9dc09d;
+	left: 2%;
+	top: 1%;
+	width: 93%;
+	z-index: 1;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #3f8880;
+	padding: 5px;
+	text-align: center;
+	color: #000000;
+	position: absolute;
+	display: none;
+	font-size: 100%;
+/* Stan_rounded border of feedback box */
+	border-radius: 5px;
+	padding: 5px;
+/* Stan_rounded border of fixed box END */
+	
+}
+	
+	}
+
+/************************************************************************************
+smaller than 560
+*************************************************************************************/
+@media screen and (max-width: 480px) {
+
+	/* disable webkit text size adjust (for iPhone) */
+	html {
+		-webkit-text-size-adjust: none;
+	}
+	
+	/* embedded videos */
+	.video embed,
+	.video object {
+		min-height: 250px;
+	}
+	
+	.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+	margin-left:auto;margin-right:auto;text-align:center; /* Stan: Comment out this line if you don't want the video to be centered */
+}
+
+	.video-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+	
+	div.LeftContainer{
+		border-style: none;
+		padding: 2px 0px 2px 0px;
+		width: 100%;
+		margin-bottom: 0px;
+	}
+
+	div.RightContainer{
+		border-style: none;
+		padding: 2px 0px 2px 0px;
+		width: 100%;
+		margin-bottom: 0px;
+	}
+
+div.Feedback {
+	background-color: #9dc09d;
+	left: 2%;
+	top: 1%;
+	width: 92%;
+	z-index: 1;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #3f8880;
+	padding: 5px;
+	text-align: center;
+	color: #000000;
+	position: absolute;
+	display: none;
+	font-size: 100%;
+/* Stan_rounded border of feedback box */
+	border-radius: 5px;
+	padding: 5px;
+/* Stan_rounded border of fixed box END */
+	
+	}
+}
+
+/************************************************************************************
+smaller than 480
+*************************************************************************************/
+@media screen  and (max-width: 360px) {
+      
+	/* disable webkit text size adjust (for iPhone) */
+	html {
+		-webkit-text-size-adjust: none;
+	}
+	
+	/* embedded videos */
+	.video embed,
+	.video object {
+		min-height: 250px;
+	}
+	
+	.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+	margin-left:auto;margin-right:auto;text-align:center; /* Stan: Comment out this line if you don't want the video to be centered */
+}
+
+	.video-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+	
+	
+	div.LeftContainer{
+		border-style: none;
+		padding: 2px 0px 2px 0px;
+		width: 100%;
+		margin-bottom: 0px;
+	}
+
+	div.RightContainer{
+		border-style: none;
+		padding: 2px 0px 2px 0px;
+		width: 100%;
+		margin-bottom: 0px;
+	}
+
+div.Feedback {
+	background-color: #9dc09d;
+	left: 2%;
+	top: 1%;
+	width: 92%;
+	z-index: 1;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #3f8880;
+	padding: 5px;
+	text-align: center;
+	color: #000000;
+	position: absolute;
+	display: none;
+	font-size: 100%;
+/* Stan_rounded border of feedback box */
+	border-radius: 5px;
+	padding: 5px;
+/* Stan_rounded border of fixed box END */
+	
+	}
+}
+	
+
+@media screen and (max-width: 320px) {
+    
+	/* disable webkit text size adjust (for iPhone) */
+	html {
+		-webkit-text-size-adjust: none;
+	}
+	
+	/* embedded videos */
+	.video embed,
+	.video object {
+		min-height: 250px;
+	}
+	
+	.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+	margin-left:auto;margin-right:auto;text-align:center; /* Stan: Comment out this line if you don't want the video to be centered */
+}
+
+	.video-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+	div.LeftContainer{
+		border-style: none;
+		padding: 2px 0px 2px 0px;
+		width: 100%;
+		margin-bottom: 0px;
+	}
+
+	div.RightContainer{
+		border-style: none;
+		padding: 2px 0px 2px 0px;
+		width: 100%;
+		margin-bottom: 0px;
+	}
+
+div.Feedback {
+	background-color: #9dc09d;
+	left: 2%;
+	top: 1%;
+	width: 92%;
+	z-index: 1;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #3f8880;
+	padding: 5px;
+	text-align: center;
+	color: #000000;
+	position: absolute;
+	display: none;
+	font-size: 100%;
+/* Stan_rounded border of feedback box */
+	border-radius: 5px;
+	padding: 5px;
+/* Stan_rounded border of fixed box END */
+	
+	}
+      }
+	  
+
+/* ============================================== */
+/* Smaller devices                                */
+/* Android Portrait                       240x320 */
+/* ============================================== */
+@media screen and (max-width:240px) {
+
+	
+	/* embedded videos */
+	.video embed,
+	.video object {
+		min-height: 250px;
+	}
+	
+		
+	.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+	margin-left:auto;margin-right:auto;text-align:center; /* Stan: Comment out this line if you don't want the video to be centered */
+}
+
+	.video-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+	
+	div.LeftContainer{
+		border-style: none;
+		padding: 2px 0px 2px 0px;
+		width: 100%;
+		margin-bottom: 0px;
+	}
+
+	div.RightContainer{
+		border-style: none;
+		padding: 2px 0px 2px 0px;
+		width: 100%;
+		margin-bottom: 0px;
+	}
+
+div.Feedback {
+	background-color: #9dc09d;
+	left: 2%;
+	top: 1%;
+	width: 92%;
+	z-index: 1;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #3f8880;
+	padding: 5px;
+	text-align: center;
+	color: #000000;
+	position: absolute;
+	display: none;
+	font-size: 100%;
+/* Stan_rounded border of feedback box */
+	border-radius: 5px;
+	padding: 5px;
+/* Stan_rounded border of fixed box END */
+	
+	}
 }
 
 
@@ -3534,7 +4041,7 @@ function DownTime(){
 <div class="Titles">
 	<h2 class="ExerciseTitle">Pe&#x00F3;n especialista 2025 &#x2013; CALIDAD URBANA v0.1</h2>
 
-	<h3 class="ExerciseSubtitle"><img src="https://0.gravatar.com/avatar/b8b6cd43970b7d9eb9f92e5fd22dd78582a3db3a5208edb04904b2d6b811e447?size=512&d=initials" alt="Just mef" style="width:10%;height:10%;"><br /><h2>Este formulario tan solo es un ejercicio que no sustituye el material de estudio . Versi&#x00F3;n en desarrollo pendiente de revisi&#x00F3;n </h2></h3>
+	<h3 class="ExerciseSubtitle"><img src="https://0.gravatar.com/avatar/b8b6cd43970b7d9eb9f92e5fd22dd78582a3db3a5208edb04904b2d6b811e447?size=512&d=initials" alt="Just me" style="width:10%;height:10%;"><br /><h2>Este formulario tan solo es un ejercicio que no sustituye el material de estudio . Versi&#x00F3;n en desarrollo pendiente de revisi&#x00F3;n </h2></h3>
 
 
 <div id="Timer"><span id="TimerText">&#160;&#160;</span></div>
