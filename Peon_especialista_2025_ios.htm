@@ -4,12 +4,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
 <meta name="dc:creator" content="Prometeu" />
-<meta name="dc:title" content="Pe&#x00F3;n especialista 2025 &#x2013; CALIDAD URBANA v0.2" />
+<meta name="dc:title" content="Pe&#x00F3;n especialista 2025 &#x2013; CALIDAD URBANA v0.3" />
 
 
 
 <title>
-Pe&#x00F3;n especialista 2025 &#x2013; CALIDAD URBANA v0.2
+Pe&#x00F3;n especialista 2025 &#x2013; CALIDAD URBANA v0.3
 </title>
 
 <!-- Made with executable version 7.0 Release 3 Build 0 -->
@@ -1214,8 +1214,6 @@ function ShowMessage(Feedback){
 	setTimeout("document.getElementById('FeedbackOKButton').focus()", 50);
 	
 //
-//	RefreshImages();
-//
 }
 
 function ShowElements(Show, TagName, ContainerToReverse){
@@ -1370,29 +1368,9 @@ function Shuffle(InArray){
 function WriteToInstructions(Feedback) {
 	document.getElementById('InstructionsDiv').innerHTML = Feedback;
 
-	RefreshImages();
-
 }
 
 
-
-Imgs = new Array();
-
-function PreloadImages(){
-	var a = PreloadImages.arguments;
-	for (var i=0; i<a.length; i++){
-		Imgs[i] = new Image();
-		Imgs[i].src = a[i];
-	}
-}
-
-function RefreshImages(){
-	for (var i=0; i<document.images.length; i++){
-		if (document.images[i].name.substring(0,6) != 'NavBar'){
-			document.images[i].src = document.images[i].src;
-		}
-	}
-}
 
 
 function EscapeDoubleQuotes(InString){
@@ -3849,8 +3827,6 @@ function StartUp(){
 
 	
 
-	PreloadImages('https://0.gravatar.com/avatar/b8b6cd43970b7d9eb9f92e5fd22dd78582a3db3a5208edb04904b2d6b811e447?size=192&d=initials');
-
 	
 	CompleteEmptyFeedback();
 
@@ -4193,8 +4169,6 @@ function CheckFinished(){
 function TimesUp(){
 	document.getElementById('Timer').innerHTML = 'Se acabo el tiempo!';
 
-	RefreshImages();
-
 	TimeOver = true;
 	Finished = true;
 	ShowMessage('Se acabo el tiempo!');
@@ -4270,11 +4244,15 @@ function DownTime(){
 <div class="NavButtonBar" id="TopNavBar">
 
 
+<button class="NavButton" onclick="history.back(); return false;">&lt;= Atr&#x00E1;s</button>
 
 
-<button class="NavButton" onclick="location='descargas.htm'; return false;"> Contenidos Descargables </button>
+
+<button class="NavButton" onclick="location='descargas.htm'; return false;"> Contenidos </button>
 
 
+
+<button class="NavButton" onclick="location='rellenalo.htm'; return false;">Siguiente =&gt;</button>
 
 
 </div>
@@ -4284,9 +4262,9 @@ function DownTime(){
 <!-- EndTopNavButtons -->
 
 <div class="Titles">
-	<h2 class="ExerciseTitle">Pe&#x00F3;n especialista 2025 &#x2013; CALIDAD URBANA v0.2</h2>
+	<h2 class="ExerciseTitle">Pe&#x00F3;n especialista 2025 &#x2013; CALIDAD URBANA v0.3</h2>
 
-	<h3 class="ExerciseSubtitle"><img src="https://0.gravatar.com/avatar/b8b6cd43970b7d9eb9f92e5fd22dd78582a3db3a5208edb04904b2d6b811e447?size=192&d=initials" alt="Just me" ><br /><h2>Este formulario tan solo es un ejercicio que no sustituye el material de estudio . Versi&#x00F3;n en desarrollo pendiente de revisi&#x00F3;n </h2></h3>
+	<h3 class="ExerciseSubtitle"><h2>Este formulario tan solo es un ejercicio que no sustituye el material de estudio . Versi&#x00F3;n en desarrollo pendiente de revisi&#x00F3;n </h2></h3>
 
 
 <div id="Timer"><span id="TimerText">&#160;&#160;</span></div>
@@ -4608,11 +4586,15 @@ function DownTime(){
 <div class="NavButtonBar" id="BottomNavBar">
 
 
+<button class="NavButton" onclick="history.back(); return false;">&lt;= Atr&#x00E1;s</button>
 
 
-<button class="NavButton" onclick="location='descargas.htm'; return false;"> Contenidos Descargables </button>
+
+<button class="NavButton" onclick="location='descargas.htm'; return false;"> Contenidos </button>
 
 
+
+<button class="NavButton" onclick="location='rellenalo.htm'; return false;">Siguiente =&gt;</button>
 
 
 </div>
